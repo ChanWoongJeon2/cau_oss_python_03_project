@@ -1,4 +1,10 @@
+# 필요한 모듈(file_manager, parking_spot_manager)을 불러온다
+import file_manager
+import parking_spot_manager
+
 def start_process(path):
+    str_list = file_manager.read_file(path) # path경로의 값 문자열 리스트에 저장
+    obj_list = parking_spot_manager.str_list_to_class_list(str_list) # 문자열 리스트를 객체 리스트에 저장
     while True:
         print("---menu---")
         print("[1] print")
@@ -7,8 +13,8 @@ def start_process(path):
         print("[4] exit")
         select = int(input('type:'))
         if select == 1:
-            print("not implemented yet")
-            # fill this block
+            parking_spot_manager.print_spots(obj_list) # 객체를 출력한다.
+            
         elif select == 2:
             print("---filter by---")
             print("[1] name")
@@ -52,7 +58,7 @@ def start_process(path):
                 # fill this block
             else: print("invalid input")
         elif select == 4:
-            print("not implemented yet")
-            # fill this block
+            print("Exit") 
+            break # while문을 break한다
         else:
             print("invalid input")
