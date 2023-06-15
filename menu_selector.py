@@ -25,27 +25,33 @@ def start_process(path):
             select = int(input('type:'))
             if select == 1:
                 keyword = input('type name:')
-                print("not implemented yet")
-                # fill this block
+                # 입력한 이름 키워드 값을 기준으로 filter_by_name 함수를 호출하여 새로운 obj_list 생성
+                obj_list = parking_spot_manager.filter_by_name(obj_list, keyword) 
+                
             elif select == 2:
                 keyword = input('type city:')
-                print("not implemented yet")
-                # fill this block
+                # 입력한 도시 키워드 값을 기준으로 filter_by_city 함수를 호출하여 새로운 obj_list 생성
+                obj_list = parking_spot_manager.filter_by_city(obj_list, keyword)
+                
             elif select == 3:
                 keyword = input('type district:')
-                print("not implemented yet")
-                # fill this block
+                # 입력한 district 키워드 값을 기준으로 filter_by_district 함수를 호출하여 새로운 obj_list 생성
+                obj_list = parking_spot_manager.filter_by_district(obj_list, keyword)
+                
             elif select == 4:
                 keyword = input('type ptype:')
-                print("not implemented yet")
-                # fill this block
+                # 입력한 ptype 키워드 값을 기준으로 filter_by_ptype 함수를 호출하여 새로운 obj_list 생성
+                obj_list = parking_spot_manager.filter_by_ptype(obj_list, keyword)
+                
             elif select == 5:
                 min_lat = float(input('type min lat:'))
                 max_lat = float(input('type max lat:'))
                 min_lon = float(input('type min long:'))
                 max_lon = float(input('type max long:'))
-                print("not implemented yet")
-                # fill this block
+                keyword = (min_lat, max_lat, min_lon, max_lon) #위도 경도 값을 이용하여 튜블 생성
+                # 입력한 최대 최소 위도,경도 키워드 튜플 값을 기준으로 filter_by_location 함수를 호출하여 새로운 obj_list 생성
+                obj_list = parking_spot_manager.filter_by_location(obj_list, keyword)
+                
             else:
                 print("invalid input")
         elif select == 3:

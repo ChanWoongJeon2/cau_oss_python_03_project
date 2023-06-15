@@ -36,6 +36,33 @@ def print_spots(spots):
     print(f"---print elements({len(spots)})---")
     for data in spots:
         print(data)
+
+# filter_by_name 함수 지정, 리스트 함축을 이용하여 이름을 기준으로 필터링 한 후 새로운 리스트 반환
+def filter_by_name(spots, name):
+    name_list = [data for data in spots if name in data.get('name')]
+    return name_list
+
+# filter_by_city 함수 지정, 리스트 함축을 이용하여 도시을 기준으로 필터링 한 후 새로운 리스트 반환
+def filter_by_city(spots, city):
+    city_list = [data for data in spots if city in data.get('city')]
+    return city_list
+
+# filter_by_district 함수 지정, 리스트 함축을 이용하여 district을 기준으로 필터링 한 후 새로운 리스트 반환
+def filter_by_district(spots, district):
+    district_list = [data for data in spots if district in data.get('district')]
+    return district_list
+
+# filter_by_ptype 함수 지정, 리스트 함축을 이용하여 ptype을 기준으로 필터링 한 후 새로운 리스트 반환
+def filter_by_ptype(spots, ptype):
+    ptype_list = [data for data in spots if ptype in data.get('ptype')]
+    return ptype_list
+
+# filter_by_location 함수 지정, 리스트 함축을 이용하여 위도,경도를 기준으로 필터링 한 후 새로운 리스트 반환
+def filter_by_location(spots, locations):
+    location_list = [data for data in spots if locations[0] < data.get('latitude') < locations[1] and \
+                                               locations[2] < data.get('longitude') < locations[3]]
+    return location_list
+
 # 각 단계별로 테스트 (테스트할때 주석해제 후 사용)
 if __name__ == '__main__':
     print("Testing the module...")
