@@ -60,8 +60,8 @@ def start_process(path):
             print(keywords)
             keyword = input('type keyword:')
             if keyword in keywords:
-                print("not implemented yet")
-                # fill this block
+                # 입력한 keyword값이 keywords 리스트에 있으면 객체리스트 obj_list와 keyword값을 sort_by_keyword 함수를 호출하여 새로운 obj_list 생성
+                obj_list = parking_spot_manager.sort_by_keyword(obj_list, keyword)
             else: print("invalid input")
         elif select == 4:
             print("Exit") 

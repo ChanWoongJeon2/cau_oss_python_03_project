@@ -63,6 +63,11 @@ def filter_by_location(spots, locations):
                                                locations[2] < data.get('longitude') < locations[3]]
     return location_list
 
+#sort_by_keyword 함수 지정, lambda 함수를 이용하여 spots이라는 변수로 받아온 객체리스트 keyword 값을 기준으로 정렬 후 새로운 리스트 반환
+def sort_by_keyword(spots, keyword):
+    sorted_list = sorted(spots, key=lambda data:data.get(keyword))
+    return sorted_list
+
 # 각 단계별로 테스트 (테스트할때 주석해제 후 사용)
 if __name__ == '__main__':
     print("Testing the module...")
